@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:linear-gradient(135deg,#6A0DAD,#8A2BE2,#B266FF);
+            font-family:Arial,sans-serif;
+            animation:fadeIn .3s ease;
+            overflow:hidden;
+        }
+
+        .title{
+            position:absolute;
+            top:40px;
+            width:100%;
+            text-align:center;
+            color:white;
+            font-family:cursive;
+            font-size:36px;
+        }
+
+        .glass{
+            width:340px;
+            padding:40px;
+            text-align:center;
+            background:rgba(255,255,255,.15);
+            backdrop-filter:blur(6px);
+            -webkit-backdrop-filter:blur(6px);
+            border:1px solid rgba(255,255,255,.2);
+            border-radius:20px;
+            box-shadow:0 8px 20px rgba(0,0,0,.2);
+            color:white;
+        }
+
+        .glass h1{
+            font-family:cursive;
+            font-size:50px;
+            margin-bottom:10px;
+        }
+
+        .glass p{
+            font-size:18px;
+            letter-spacing:2px;
+            margin-bottom:25px;
+        }
+
+        button{
+            padding:12px 28px;
+            border:none;
+            border-radius:12px;
+            background:white;
+            color:#6A0DAD;
+            font-size:16px;
+            cursor:pointer;
+            transition:.2s;
+        }
+
+        button:hover{
+            transform:scale(1.05);
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(15px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">
+        This is my letter for you 💌
+    </div>
+
+    <div class="glass">
+        <h1>Gian & Mari 💜</h1>
+        <p>November 17, 2024</p>
+
+        <button onclick="window.location.href='page3.html'">
+            Next
+        </button>
+    </div>
+
+</body>
+</html>

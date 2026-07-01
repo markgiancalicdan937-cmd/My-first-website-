@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My First Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#2b0057,#6a0dad,#b266ff);
+}
+
+/* Floating Hearts */
+body::before,
+body::after{
+    
+   content:"💜 ";
+   content:"🤍 ";
+   
+   
+    position:absolute;
+    font-size:25px;
+    animation:float 8s linear infinite;
+    opacity:.5;
+}
+
+body::after{
+    left:80%;
+    animation-delay:4s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) scale(.5);
+    }
+    100%{
+        transform:translateY(-120vh) scale(1.5);
+    }
+}
+
+/* Glass Box */
+.glass{
+    width:90%;
+    max-width:420px;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.3);
+    box-shadow:0 0 25px rgba(162,89,255,.5);
+    text-align:center;
+}
+
+h1{
+    color:white;
+    margin-bottom:15px;
+    text-shadow:0 0 15px #d7b3ff;
+}
+
+p{
+    color:#eee;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+button{
+    padding:12px 28px;
+    font-size:17px;
+    border:none;
+    border-radius:15px;
+    background:#9d4edd;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px #d7b3ff;
+}
+
+/* Timer */
+#timer{
+    margin-top:25px;
+    color:white;
+    font-size:17px;
+    line-height:1.7;
+    text-shadow:0 0 10px #ffffff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="glass">
+  
+  <img src="received_2042238496703742.jpeg"class="top-image">
+
+<style>
+.top-image{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    margin-bottom:20px;
+    border:3px solid rgba(255,255,255,.4);
+    box-shadow:0 0 20px rgba(180,120,255,.7);
+}
+</style>
+
+<h1>MARK & MARI </h1>
+
+<p>Welcome to my first website.</p>
+
+<button onclick="nextPage()">Click Here</button>
+
+<div id="timer"></div>
+
+</div>
+
+<script>
+
+function nextPage(){
+    document.body.style.opacity="0";
+
+    setTimeout(()=>{
+        window.location.href="page2.html";
+    },500);
+}
+
+// Relationship Timer
+const startDate = new Date("2024-11-17T00:00:00");
+
+function updateTimer(){
+
+    const now = new Date();
+
+    const diff = now - startDate;
+
+    const days = Math.floor(diff/(1000*60*60*24));
+
+    const hours = now.getHours();
+
+    const minutes = now.getMinutes();
+
+    const seconds = now.getSeconds();
+
+    document.getElementById("timer").innerHTML=
+    "🤍 Together for 🤍 <br><br>" +
+    "<b>"+days+"</b> Days<br>" +
+    hours+" Hours "+
+    minutes+" Minutes "+
+    seconds+" Seconds";
+}
+
+setInterval(updateTimer,1000);
+updateTimer();
+
+</script>
+
+</body>
+</html>
